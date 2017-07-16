@@ -1,20 +1,11 @@
-
-/*习惯
-	1. 对象自己的方法访问自己的属性或调用自己的其他方法时
-	   必须加this！
-	2. 对象的每个属性和方法间都要用逗号分隔！
-	   Unexpected identifier
-*/
 if(!Function.prototype.bind){
 	Function.prototype.bind=function(obj){
-		//this-->当前调用bind方法的函数对象fun
+
 		//将当前函数对象保存为一个局部变量
 		var fun=this;//calcSal(base,bonus,other)
-		var args=//将类数组对象转为普通数组
-			Array.prototype.slice.call(arguments,1);
-		//仅获取除obj参数外的剩余参数：[1:8000]
-		//闭包封装了：fun,obj,args
-		return function(/*后续参数列表*/){
+		var args=Array.prototype.slice.call(arguments,1);
+
+		return function(){
 			//每次调用fun时，都用obj
 			fun.apply(obj,args.concat(
 				Array.prototype.slice.call(arguments)
