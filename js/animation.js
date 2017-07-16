@@ -10,7 +10,7 @@ var animation={
 	init:function(){//初始化，计算interval
 		this.interval=this.duration/this.steps;
 	},
-	//添加移动任务方法：
+
 	//根据div的当前位置和目标位置行号和列号，计算行列两个方向上每步位移。
 	addTask:function(div,rFrom,cFrom,rTo,cTo){
 		//向tasks中添加对象
@@ -33,8 +33,7 @@ var animation={
 				parseFloat(style.left)+obj.cstep+"px";
 		}
 		this.steps--;//步数计数器-1
-		if(this.steps==0){//如果步数走完
-			//就停止定时器，清除所有div的left值，使其回到原位，再重置步数计数器，再清空任务列表。
+		if(this.steps==0){
 			clearInterval(this.timer);
 			for(var i=0;i<this.tasks.length;i++){
 				var obj=this.tasks[i];
