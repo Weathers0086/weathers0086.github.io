@@ -46,9 +46,8 @@ var game={
 				'<div id="c'+r+c+'" class="cell"></div>'
 				);
 			}
-		}//(遍历结束)
-		//找到id为gridPanel的div,设置内容为：
-		//	grids无缝拼接的结果+cells无缝拼接的结果
+		}
+
 		funcGet("gridPanel").innerHTML=grids.join("")
 			                    +cells.join("");
 	},
@@ -267,7 +266,7 @@ var game={
 					return false;//返回false
 				}
 			}
-		}//(遍历结束)
+		}
 		return true;//返回true
 	},
 	randomNum:function(){//生成1个随机数的方法
@@ -477,7 +476,7 @@ var game={
 		return -1;
 	}
 }
-//页面加载后：页面加载后自动触发！
+
 window.onload=function(){
 	game.start();
 
