@@ -373,9 +373,9 @@ var game={
 			if(prevc==-1){break;}
 		//	否则，如果当前元素等于
 			else if(this.data[r][c]==0){
-		//		将prevc位置的元素值替换到当前元素
+
 				this.data[r][c]=this.data[r][prevc];
-		//		将prevc位置的元素设置为0
+
 				this.data[r][prevc]=0;
 				animation.addTask(
 					funcGet("c"+r+prevc),r,prevc,r,c);
@@ -384,12 +384,12 @@ var game={
 				
 			}else if(this.data[r][c]
 						==this.data[r][prevc]){
-			//  否则，如果当前元素等于prevc位置的元素
-		//		将当前元素*2
+
+
 				this.data[r][c]*=2;
-		//		将prevc位置的元素设置为0
+
 				this.data[r][prevc]=0;
-				//将合并后当前元素的值，计入总分
+
 				this.score+=this.data[r][c];
 				animation.addTask(
 					funcGet("c"+r+prevc),r,prevc,r,c);
@@ -397,14 +397,14 @@ var game={
 		}
 	},
 	getLeftInRow:function(r,c){//遍历c位置前的剩余元素
-		//prevc从c-1开始，到>=0结束，每次--
+
 		for(var prevc=c-1;prevc>=0;prevc--){
-		//	如果prevc位置的元素!=0
+
 			if(this.data[r][prevc]!=0){
-		//		返回prevc
+
 				return prevc;
 			}
-		}//(遍历结束)
+		}
 		return -1;//返回-1
 	},
 	moveUp:function(){
@@ -426,7 +426,7 @@ var game={
 						==this.data[nextr][c]){
 				this.data[r][c]*=2;
 				this.data[nextr][c]=0;
-				//将合并后当前元素的值，计入总分
+				//计入总分
 				this.score+=this.data[r][c];
 				animation.addTask(
 					funcGet("c"+nextr+c),nextr,c,r,c);
