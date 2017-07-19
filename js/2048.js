@@ -1,12 +1,12 @@
 if(!Function.prototype.bind){
 	Function.prototype.bind=function(obj){
 
-		//将当前函数对象保存为一个局部变量
+
 		var fun=this;//calcSal(base,bonus,other)
 		var args=Array.prototype.slice.call(arguments,1);
 
 		return function(){
-			//每次调用fun时，都用obj
+
 			fun.apply(obj,args.concat(
 				Array.prototype.slice.call(arguments)
 			));
@@ -33,15 +33,15 @@ var game={
 		funcGet("gridPanel").style.height=this.RN*116+16+"px";
 		var grids=[];
 		var cells=[];
-		//r从0开始,到<RN结束，每次++
+
 		for(var r=0;r<this.RN;r++){
-		//	c从0开始,到<CN结束，每次++
+
 			for(var c=0;c<this.CN;c++){
-		//		在grids中push一个字符串: 
+
 				grids.push(
 				'<div id="g'+r+c+'" class="grid"></div>'
 				);
-		//		在cells中push一个字符串:
+
 				cells.push(
 				'<div id="c'+r+c+'" class="cell"></div>'
 				);
