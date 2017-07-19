@@ -90,7 +90,7 @@ var game={
 			this.moveDown();
 		}.bind(this));
 
-			//阻止默认事件
+
 			document.addEventListener("touchmove",function(e){
 				e.preventDefault();
 			},false);
@@ -149,12 +149,6 @@ var game={
 		}
 
 
-
-
-
-
-
-
 /*------------------上面的是移动端-----------------------*/
 
 		//绑定键盘事件:当键盘按下时，自动触发
@@ -162,7 +156,7 @@ var game={
 			if(this.state==this.RUNNING){
 				var e=window.event||arguments[0];
 					//  IE8           IE9+或其它
-				//alert(e.keyCode);//打桩！
+
 				switch(e.keyCode){//判断按键号
 					case 37: this.moveLeft(); break;
 					case 38: this.moveUp(); break;
@@ -176,19 +170,18 @@ var game={
 		//遍历data中每个元素
 		for(var r=0;r<this.RN;r++){
 			for(var c=0;c<this.CN;c++){
-			//	拼id: "c"+r+c
-			//  找到指定id的格子div对象，保存在变量div中
+
 				var div=funcGet("c"+r+c);
-			//  如果当前元素的值为0,(清空div的样式和内容)
+
 				if(this.data[r][c]==0){
-			//		将div的内容设置为""
+
 					div.innerHTML="";
-			//      设置div的class属性为"cell"
+
 					div.className="cell";
-				}else{//	否则
-			//		将div的内容设置为当前元素的值
+				}else{
+
 					div.innerHTML=this.data[r][c];
-			//	设置div的class属性为"cell n"+当前元素的值
+
 					div.className="cell n"+this.data[r][c];
 				}
 			}
