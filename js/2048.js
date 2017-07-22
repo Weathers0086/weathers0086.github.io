@@ -284,13 +284,13 @@ var game={
 		iterator.call(this);
 		var after=this.data.toString();
 		if(before!=after){
-			//修改游戏状态为播放动画状态
-			//播放动画状态下，不响应键盘事件
+
+
 			this.state=this.PLAYING;
-			//启动动画，传入回调函数
-			//回调函数在动画播放完成后，自动执行
-			//动画完成后，生成随机数，更新页面，修改动画状态为运行状态，才可继续响应按键事件
-			//回调函数要提前绑定this为game对象。
+
+
+
+
 			animation.start(function(){
 				this.randomNum();
 				this.updateView();
