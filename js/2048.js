@@ -167,7 +167,7 @@ var game={
 		}.bind(this);
 	},
 	updateView:function(){
-		//遍历data中每个元素
+
 		for(var r=0;r<this.RN;r++){
 			for(var c=0;c<this.CN;c++){
 
@@ -216,17 +216,17 @@ var game={
 
 
 
-		//找到id为"score"的span，直接修改其内容为游戏的score属性值
-		funcGet("score").innerHTML=this.score;
-		//span对象
 
-		//调用isGameOver方法,如果返回true
+		funcGet("score").innerHTML=this.score;
+
+
+
 		if(this.isGameOver()){
-		//	修改游戏状态为GAMEOVER
+
 			this.state=this.GAMEOVER;
-		//	找到id为finalScore的span，设置内容为游戏的分数
+
 			funcGet("finalScore").innerHTML=this.score;
-		//	找到id为gameOver的div，显示出来
+
 			funcGet("gameOver").style.display="block";
 			if(this.score>this.getTop()){
 				this.setTop(this.score);
@@ -239,23 +239,23 @@ var game={
 		document.cookie="top="+value+";expires="+
 			            now.toGMTString();
 	},
-	getTop:function(){//从cookie中读取top变量的值
+	getTop:function(){
 		var top=parseInt(document.cookie.slice(4));
 		return isNaN(top)?0:top;
 	},
 	isGameOver:function(){
 		for(var r=0;r<this.RN;r++){//遍历data中每个元素
 			for(var c=0;c<this.CN;c++){
-				//如果当前元素等于0
+
 				if(this.data[r][c]==0){
 					return false;//返回false
 				}else if(c!=this.CN-1
 				&&this.data[r][c]==this.data[r][c+1]){
-		//	否则，如果c不是最右侧列且当前元素等于右侧元素
+
 					return false;//返回false
 				}else if(r!=this.RN-1
 				&&this.data[r][c]==this.data[r+1][c]){
-		//	否则，如果r不是最下方行且当前元素等于下方元素
+
 					return false;//返回false
 				}
 			}
@@ -268,11 +268,11 @@ var game={
 			var r=Math.floor(Math.random()*this.RN);
 			//在0~CN-1之间生成一个随机列号，保存在变量c中
 			var c=Math.floor(Math.random()*this.CN);
-			//如果data中r行c列的元素==0
+
 			if(this.data[r][c]==0){
-			//	再生成一个随机数，
-			//	如果<0.5，就在data中r行c列放入2
-			//			  否则放入4
+	
+
+	
 				this.data[r][c]=Math.random()<0.5?2:4;
 			//	退出循环
 				break;
