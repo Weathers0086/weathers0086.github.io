@@ -151,8 +151,8 @@ var game={
 
 /*------------------上面的是移动端-----------------------*/
 
-		//绑定键盘事件:当键盘按下时，自动触发
-		document.onkeydown=function(){//自动获得事件对象
+		
+		document.onkeydown=function(){
 			if(this.state==this.RUNNING){
 				var e=window.event||arguments[0];
 					//  IE8           IE9+或其它
@@ -260,7 +260,7 @@ var game={
 				}
 			}
 		}
-		return true;//返回true
+		return true;
 	},
 	randomNum:function(){//生成1个随机数的方法
 		for(;;){//死循环
@@ -274,7 +274,7 @@ var game={
 
 	
 				this.data[r][c]=Math.random()<0.5?2:4;
-			//	退出循环
+			
 				break;
 			}
 		}
@@ -298,14 +298,14 @@ var game={
 			}.bind(this));
 		}
 	},
-	moveLeft:function(){//遍历每一行，针对每一行执行左移
+	moveLeft:function(){
 		this.move(function(){
 			for(var r=0;r<this.RN;r++){
 				this.moveLeftInRow(r);
 			}
 		});
 	},
-	moveLeftInRow:function(r){//仅移动指定的一行
+	moveLeftInRow:function(r){
 		//从0位置开始，到<CN-1结束,遍历r行中每个元素
 		for(var c=0;c<this.CN-1;c++){
 			var nextc=this.getRightInRow(r,c);
