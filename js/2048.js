@@ -362,9 +362,9 @@ var game={
 		for(var c=this.CN-1;c>0;c--){
 		//	获得左侧下一个不为0的位置,保存在prevc
 			var prevc=this.getLeftInRow(r,c);
-		//	如果没找到,退出循环
+		
 			if(prevc==-1){break;}
-		//	否则，如果当前元素等于
+		
 			else if(this.data[r][c]==0){
 
 				this.data[r][c]=this.data[r][prevc];
@@ -389,7 +389,7 @@ var game={
 			}
 		}
 	},
-	getLeftInRow:function(r,c){//遍历c位置前的剩余元素
+	getLeftInRow:function(r,c){
 
 		for(var prevc=c-1;prevc>=0;prevc--){
 
@@ -398,14 +398,14 @@ var game={
 				return prevc;
 			}
 		}
-		return -1;//返回-1
+		return -1;
 	},
 	moveUp:function(){
 		this.move(function(){
 		  for(var c=0;c<this.CN;this.moveUpInCol(c),c++);
 		});
 	},
-	moveUpInCol:function(c){//仅移动指定的一行
+	moveUpInCol:function(c){
 		for(var r=0;r<this.RN-1;r++){
 			var nextr=this.getDownInCol(r,c);
 			if(nextr==-1){break;}
