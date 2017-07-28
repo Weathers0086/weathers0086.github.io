@@ -54,8 +54,8 @@ var game={
 	start:function(){//开始游戏方法
 		this.init();//生成游戏界面
 		animation.init();
-		//var self=this;//***留住this***
-		//r从0开始，到<RN结束，遍历每一行
+
+
 		for(var r=0;r<this.RN;r++){
 			this.data.push([]);//在data中压入一个空数组
 			//	c从0开始，到<CN结束，遍历行中每个格
@@ -233,7 +233,7 @@ var game={
 			}
 		}
 	},
-	setTop:function(value){//将value写入cookie中的top变量
+	setTop:function(value){
 		var now=new Date();
 		now.setFullYear(now.getFullYear()+1);
 		document.cookie="top="+value+";expires="+
@@ -336,7 +336,7 @@ var game={
 			}
 		}
 	},
-	//查找指定位置右侧下一个不为0的位置下标
+	
 	getRightInRow:function(r,c){
 		//nextc从c+1开始，遍历r行右侧剩余元素
 		for(var nextc=c+1;nextc<this.CN;nextc++){
