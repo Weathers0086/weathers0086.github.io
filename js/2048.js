@@ -264,7 +264,7 @@ var game={
 	},
 	randomNum:function(){
 		for(;;){//死循环
-			//在0~RN-1之间生成一个随机行号，保存在变量r中
+			
 			var r=Math.floor(Math.random()*this.RN);
 			//在0~CN-1之间生成一个随机列号，保存在变量c中
 			var c=Math.floor(Math.random()*this.CN);
@@ -279,7 +279,7 @@ var game={
 			}
 		}
 	},
-	move:function(iterator){//iterator专门执行for的函数
+	move:function(iterator){
 		var before=this.data.toString();
 		iterator.call(this);
 		var after=this.data.toString();
