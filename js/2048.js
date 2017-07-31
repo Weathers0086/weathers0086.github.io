@@ -157,7 +157,7 @@ var game={
 				var e=window.event||arguments[0];
 					//  IE8           IE9+或其它
 
-				switch(e.keyCode){//判断按键号
+				switch(e.keyCode){
 					case 37: this.moveLeft(); break;
 					case 38: this.moveUp(); break;
 					case 39: this.moveRight(); break;
@@ -244,7 +244,7 @@ var game={
 		return isNaN(top)?0:top;
 	},
 	isGameOver:function(){
-		for(var r=0;r<this.RN;r++){//遍历data中每个元素
+		for(var r=0;r<this.RN;r++){
 			for(var c=0;c<this.CN;c++){
 
 				if(this.data[r][c]==0){
@@ -262,7 +262,7 @@ var game={
 		}
 		return true;
 	},
-	randomNum:function(){//生成1个随机数的方法
+	randomNum:function(){
 		for(;;){//死循环
 			//在0~RN-1之间生成一个随机行号，保存在变量r中
 			var r=Math.floor(Math.random()*this.RN);
