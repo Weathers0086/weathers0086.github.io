@@ -338,29 +338,29 @@ var game={
 	},
 	
 	getRightInRow:function(r,c){
-		//nextc从c+1开始，遍历r行右侧剩余元素
+
 		for(var nextc=c+1;nextc<this.CN;nextc++){
-		//	如果当前位置!=0
+
 			if(this.data[r][nextc]!=0){
-		//		返回nextc
+
 				return nextc;
 			}
-		}//(遍历结束)
-		//返回-1
+		}
+		
 		return -1;
 	},
 	moveRight:function(){
 		this.move(function(){
 			for(var r=0;r<this.RN;r++){
-			//	每遍历一行，就调用moveRightInRow，传入r
+	
 				this.moveRightInRow(r);
-			}//(遍历结束)
+			}
 		});
 	},
 	moveRightInRow:function(r){//遍历data中r行每个元素
-		//c从CN-1开始，到>0结束，每次--，
+	
 		for(var c=this.CN-1;c>0;c--){
-		//	获得左侧下一个不为0的位置,保存在prevc
+
 			var prevc=this.getLeftInRow(r,c);
 		
 			if(prevc==-1){break;}
