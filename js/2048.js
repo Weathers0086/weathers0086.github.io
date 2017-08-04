@@ -248,15 +248,15 @@ var game={
 			for(var c=0;c<this.CN;c++){
 
 				if(this.data[r][c]==0){
-					return false;//返回false
+					return false;
 				}else if(c!=this.CN-1
 				&&this.data[r][c]==this.data[r][c+1]){
 
-					return false;//返回false
+					return false;
 				}else if(r!=this.RN-1
 				&&this.data[r][c]==this.data[r+1][c]){
 
-					return false;//返回false
+					return false;
 				}
 			}
 		}
