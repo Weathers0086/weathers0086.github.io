@@ -263,7 +263,7 @@ var game={
 		return true;
 	},
 	randomNum:function(){
-		for(;;){//死循环
+		for(;;){
 			
 			var r=Math.floor(Math.random()*this.RN);
 			//在0~CN-1之间生成一个随机列号，保存在变量c中
@@ -474,9 +474,5 @@ window.onload=function(){
 	game.start();
 
 }
-
-
-
-
 
 
