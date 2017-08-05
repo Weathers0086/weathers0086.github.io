@@ -322,8 +322,7 @@ var game={
 					funcGet("c"+r+nextc),r,nextc,r,c);
 		//          c留在原地(抵消循环中的变化)
 				c--;
-			}else if(this.data[r][c]
-						==this.data[r][nextc]){
+			}else if(this.data[r][c]==this.data[r][nextc]){
 			//否则 如果当前元素==nextc位置的元素
 		//		    将当前位置*=2
 				this.data[r][c]*=2;
