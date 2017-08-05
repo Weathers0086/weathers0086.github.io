@@ -58,7 +58,6 @@ var game={
 
 		for(var r=0;r<this.RN;r++){
 			this.data.push([]);//在data中压入一个空数组
-			//	c从0开始，到<CN结束，遍历行中每个格
 			for(var c=0;c<this.CN;c++){
 				this.data[r][c]=0;//设置data中当前位置为0
 			}
