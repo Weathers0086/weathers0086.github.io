@@ -312,7 +312,7 @@ var game={
 		//	如果没找到，就退出循环
 			if(nextc==-1){break;}
 			else if(this.data[r][c]==0){
-				//否则, 如果当前元素是0
+	
 		//			将nextc位置的值换到当前位置
 				this.data[r][c]=this.data[r][nextc];
 		//			将nextc位置设置为0
