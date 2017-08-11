@@ -323,7 +323,6 @@ var game={
 				c--;
 			}else if(this.data[r][c]==this.data[r][nextc]){
 			//否则 如果当前元素==nextc位置的元素
-		//		    将当前位置*=2
 				this.data[r][c]*=2;
 		//			将nextc位置设置为0
 				this.data[r][nextc]=0;
@@ -355,7 +354,7 @@ var game={
 			}
 		});
 	},
-	moveRightInRow:function(r){//遍历data中r行每个元素
+	moveRightInRow:function(r){
 	
 		for(var c=this.CN-1;c>0;c--){
 
