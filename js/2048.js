@@ -288,8 +288,6 @@ var game={
 			this.state=this.PLAYING;
 
 
-
-
 			animation.start(function(){
 				this.randomNum();
 				this.updateView();
