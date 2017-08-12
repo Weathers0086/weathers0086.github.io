@@ -213,9 +213,6 @@ var game={
 		/*------------------↑重新设置cell的值--------------*/
 
 
-
-
-
 		funcGet("score").innerHTML=this.score;
 
 
