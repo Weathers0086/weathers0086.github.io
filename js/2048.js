@@ -1,7 +1,5 @@
 if(!Function.prototype.bind){
 	Function.prototype.bind=function(obj){
-
-
 		var fun=this;//calcSal(base,bonus,other)
 		var args=Array.prototype.slice.call(arguments,1);
 
@@ -93,7 +91,6 @@ var game={
 			document.addEventListener("touchmove",function(e){
 				e.preventDefault();
 			},false);
-
 
 
 
