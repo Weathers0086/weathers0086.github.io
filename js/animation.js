@@ -21,7 +21,7 @@ var animation={
 		);
 	},
 	//将任务中，每个对象移动一步的方法
-	moveStep:function(callback){//移动一步
+	moveStep:function(callback){
 		//遍历任务列表中每个对象中的div
 		for(var i=0;i<this.tasks.length;i++){
 			var obj=this.tasks[i];
