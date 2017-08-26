@@ -144,10 +144,7 @@ var game={
 
 		}
 
-
 /*------------------上面的是移动端-----------------------*/
-
-		
 		document.onkeydown=function(){
 			if(this.state==this.RUNNING){
 				var e=window.event||arguments[0];
