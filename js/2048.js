@@ -2,9 +2,7 @@ if(!Function.prototype.bind){
 	Function.prototype.bind=function(obj){
 		var fun=this;//calcSal(base,bonus,other)
 		var args=Array.prototype.slice.call(arguments,1);
-
 		return function(){
-
 			fun.apply(obj,args.concat(
 				Array.prototype.slice.call(arguments)
 			));
