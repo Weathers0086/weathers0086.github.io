@@ -440,6 +440,7 @@ var game={
 			}
 		}
 	},
+	
 	getUpInCol:function(r,c){
 		for(var prevr=r-1;prevr>=0;prevr--){
 			if(this.data[prevr][c]!=0){
