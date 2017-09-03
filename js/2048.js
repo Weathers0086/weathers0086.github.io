@@ -454,3 +454,4 @@ var game={
 window.onload=function(){
 	game.start();
 }
+
