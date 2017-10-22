@@ -1,1 +1,59 @@
 
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <title>swipe</title>
+  <script src="js/zepto.js"></script>
+  <style>
+    div{
+      height: 1000px;
+    }
+  </style>
+</head>
+<body>
+
+
+<ul id=items>
+  <li>List item 1 <span class=delete>DELETE</span></li>
+  <li>List item 2 <span class=delete>DELETE</span></li>
+</ul>
+
+<div></div>
+
+
+<script>
+
+  console.log($("body").swipe);
+  $("body").swipe(function(){
+    console.log(this);
+  })
+
+  $("div").on("swipe",function(){
+    console.log(this);
+  })
+  $("div").on("swipeLeft",function(){
+    console.log(this);
+  })
+
+
+  $("body").swipeLeft(function(){
+    console.log(this);
+  })
+
+  $("body").swipeRight(function(){
+    console.log(this);
+  })
+
+  $("body").swipeUp(function(){
+    console.log(this);
+  })
+  $("body").click(function(){
+    console.log(this);
+  })
+
+</script>
+</body>
+</html>
