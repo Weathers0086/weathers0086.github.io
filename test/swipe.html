@@ -1,59 +1,20 @@
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-  <title>swipe</title>
-  <script src="./zepto_all.js"></script>
-  <style>
-    div{
-      height: 1000px;
-    }
-  </style>
+  <title>select</title>
 </head>
 <body>
 
+<select name="s1" id="sel1" multiple>
+  <option value="op1">op1</option>
+  <option value="op2">op2</option>
+  <option value="op3">op3</option>
+  <option value="op4">op4</option>
+  <option value="op5">op5</option>
+</select>
 
-<ul id=items>
-  <li>List item 1 <span class=delete>DELETE</span></li>
-  <li>List item 2 <span class=delete>DELETE</span></li>
-</ul>
-
-<div></div>
-
-
-<script>
-
-  console.log($("body").swipe);
-  $("body").swipe(function(){
-    console.log(this);
-  })
-
-  $("div").on("swipe",function(){
-    console.log(this);
-  })
-  $("div").on("swipeLeft",function(){
-    console.log(this);
-  })
-
-
-  $("body").swipeLeft(function(){
-    console.log(this);
-  })
-
-  $("body").swipeRight(function(){
-    console.log(this);
-  })
-
-  $("body").swipeUp(function(){
-    console.log(this);
-  })
-  $("body").click(function(){
-    console.log(this);
-  })
-
-</script>
 </body>
 </html>
