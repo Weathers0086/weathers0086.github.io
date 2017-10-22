@@ -6,10 +6,13 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
   <title>select</title>
 
-  <script src="./zepto.js"></script>
+  <script src="./js/zepto.js"></script>
+
   <style>
 
-      #sel{
+    /*
+
+          #sel{
         -webkit-appearance: listbox;
         width: 100%;
         font-size: 36px;
@@ -23,10 +26,38 @@
         border-radius: 3px;
         text-decoration: none;
       }
+
+
+    */
+
+
+
+
+      #sel{
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        box-sizing:border-box;
+        appearance:none;
+        -webkit-appearance:none;
+        border:none;
+        border-bottom:1px solid #c9c9c9;
+        outline:none;
+        display:inline-block;
+        font-family:"Microsoft YaHei";
+        width:100%;
+        font-size:13px;
+        color:#313131;
+        padding:8px 15px;
+        min-height:36px;
+        line-height:15px;
+        background:none;
+      }
   </style>
 </head>
 <body>
+
 <h1>selected</h1>
+
 <select name="s1" id="sel" multiple value="sss">
   <option value="op1" class="op1">op1</option>
   <option value="op2">op2</option>
