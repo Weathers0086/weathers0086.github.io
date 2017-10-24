@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <title>获取位置</title>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+
+<h3>
+  <p>
+    <span>时间</span>
+    <span id="time"></span>
+  </p>
+  <p>
+    <span>维度</span>
+    <span id="lati"></span>
+  </p>
+  <p>
+    <span>经度</span>
+    <span id="long"></span>
+  </p>
+  <p>
+    <span>海拔</span>
+    <span id="alti"></span>
+  </p>
+  <p>
+    <span>速度</span>
+    <span id="speed"></span>
+  </p>
+</h3>
+
+<script>
+  window.navigator.geolocation.getCurrentPosition(function(pos){
+    document.getElementsByClassName("time")[0].html(pos.timestamp);
+    document.getElementsByClassName("lati")[0].html(pos.coords.latitude);
+    document.getElementsByClassName("long")[0].html(pos.coords.longitude);
+    document.getElementsByClassName("alti")[0].html(pos.coords.altitude);
+    document.getElementsByClassName("speed")[0].html(pos.coords.speed);
+    //   http://apis.juhe.cn/geo/?key=您申请的APPKEY&lat=39.907314&lng=116.391279&type=1
+
+
+    //  lng=119.9772857&lat=27.327578&type=1&dtype=json&key=913e9400d26480a0616e8cf29362126b
+    alert(pos);
+
+    $.ajax({
+      url:"http://apis.juhe.cn/geo/?lng=119.9772857&lat=27.327578&type=1&dtype=json&key=913e9400d26480a0616e8cf29362126b",
+      beforeSend:function(){
+        console.log(1);
+      },
+      success:function(data){
+        console.log(data);
+    },
+      error:function(err){
+        console.log(err);
+      }
+    })
+  },function(err){
+    alert(err);
+    console.log(err);
+  })
+</script>
+
+</body>
+</html>
+
+<!--
+
+名称	类型	必填	说明
+ 	lng	String	Y	经度 (如：119.9772857)
+ 	lat	String	Y	纬度 (如：27.327578)
+ 	key	String	Y	申请的APPKEY
+ 	type	Int	Y	传递的坐标类型,1:GPS 2:百度经纬度 3：谷歌经纬度
