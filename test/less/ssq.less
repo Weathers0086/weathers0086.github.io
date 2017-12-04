@@ -1,0 +1,135 @@
+body{
+  background-color: #FCFBED;
+  font-size: 1.1rem;
+  font-family: "Microsoft YaHei","微软雅黑",Helvetica;
+  white-space: nowrap;
+  text-align: center;
+}
+@span_width:2rem;    // 定义span的宽
+@span_small_height:2.3rem;  //定义section中的span的高
+@span_big_height:60px;  //定义header中的span的高
+
+header,
+section{
+  display: flex;
+  >ul{
+    width: 0;
+    box-sizing: border-box;
+    border-right: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    >li{
+      flex-grow: 1;
+      display: flex;
+      >span{
+        width: 0;
+        flex-grow: 1;
+        border-right: 1px solid #C4C4BA;
+      }
+    }
+  }
+  ul:first-child{
+    flex-grow: 2.5;
+    >li{
+      align-items: center;
+    }
+  }
+  ul:nth-child(2){
+    flex-grow: 33;
+  }
+  ul:nth-child(3){
+    flex-grow: 10;
+  }
+  ul:nth-child(4),ul:nth-child(5),ul:nth-child(6){
+    flex-grow: 1;
+  }
+  ul:nth-child(7){
+    flex-grow: 16;
+  }
+  ul:nth-child(8),ul:nth-child(9){
+    flex-grow: 2;
+  }
+  ul:nth-child(10){
+    flex-grow: 3;
+  }
+}
+header{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: #EAE068;
+  overflow: auto;
+  >ul{
+    height: @span_big_height*2;
+    >li{
+      height: 0;
+    }
+  }
+  >ul:first-child{
+    padding: 0.3rem 0;
+  }
+}
+
+section{
+  font-size: 0.85rem;
+  >ul{
+    >li{
+      height: @span_small_height;
+      line-height: @span_small_height;
+      border-bottom: 1px solid #DFDFD5;
+    }
+  }
+}
+
+
+header>ul:last-child,
+section>ul:last-child{
+  border-right: none;
+}
+header>ul>li>span:last-child,
+section>ul>li>span:last-child{
+  border-right: none;
+}
+
+header{
+  border-bottom: 2px solid #7F7950;
+}
+section{
+  margin-top: @span_big_height*2+2px;
+}
+header>ul:nth-child(2)>li,
+header>ul:nth-child(3)>li,
+header>ul:nth-child(7)>li,
+header>ul:nth-child(8)>li,
+header>ul:nth-child(9)>li,
+header>ul:nth-child(10)>li{
+  line-height: @span_big_height;
+}
+header>ul:nth-child(2)>li:first-child,
+header>ul:nth-child(3)>li:first-child,
+header>ul:nth-child(7)>li:first-child,
+header>ul:nth-child(8)>li:first-child,
+header>ul:nth-child(9)>li:first-child,
+header>ul:nth-child(10)>li:first-child{
+  border-bottom: 1px solid #7F7950;
+}
+section>ul:nth-child(2),
+section>ul:nth-child(3),
+section>ul:nth-child(6),
+section>ul:nth-child(7),
+section>ul:nth-child(8),
+section>ul:nth-child(9),
+section>ul:nth-child(10){
+  color: #CACAC0;
+}
+section>ul .red_ball{  // 红球
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
+
+

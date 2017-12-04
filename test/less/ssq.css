@@ -1,0 +1,137 @@
+body {
+  background-color: #FCFBED;
+  font-size: 1.1rem;
+  font-family: "Microsoft YaHei", "微软雅黑", Helvetica;
+  white-space: nowrap;
+  text-align: center;
+}
+header,
+section {
+  display: flex;
+}
+header > ul,
+section > ul {
+  width: 0;
+  box-sizing: border-box;
+  border-right: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+}
+header > ul > li,
+section > ul > li {
+  flex-grow: 1;
+  display: flex;
+}
+header > ul > li > span,
+section > ul > li > span {
+  width: 0;
+  flex-grow: 1;
+  border-right: 1px solid #C4C4BA;
+}
+header ul:first-child,
+section ul:first-child {
+  flex-grow: 2.5;
+}
+header ul:first-child > li,
+section ul:first-child > li {
+  align-items: center;
+}
+header ul:nth-child(2),
+section ul:nth-child(2) {
+  flex-grow: 33;
+}
+header ul:nth-child(3),
+section ul:nth-child(3) {
+  flex-grow: 10;
+}
+header ul:nth-child(4),
+section ul:nth-child(4),
+header ul:nth-child(5),
+section ul:nth-child(5),
+header ul:nth-child(6),
+section ul:nth-child(6) {
+  flex-grow: 1;
+}
+header ul:nth-child(7),
+section ul:nth-child(7) {
+  flex-grow: 16;
+}
+header ul:nth-child(8),
+section ul:nth-child(8),
+header ul:nth-child(9),
+section ul:nth-child(9) {
+  flex-grow: 2;
+}
+header ul:nth-child(10),
+section ul:nth-child(10) {
+  flex-grow: 3;
+}
+header {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: #EAE068;
+  overflow: auto;
+}
+header > ul {
+  height: 120px;
+}
+header > ul > li {
+  height: 0;
+}
+header > ul:first-child {
+  padding: 0.3rem 0;
+}
+section {
+  font-size: 0.85rem;
+}
+section > ul > li {
+  height: 2.3rem;
+  line-height: 2.3rem;
+  border-bottom: 1px solid #DFDFD5;
+}
+header > ul:last-child,
+section > ul:last-child {
+  border-right: none;
+}
+header > ul > li > span:last-child,
+section > ul > li > span:last-child {
+  border-right: none;
+}
+header {
+  border-bottom: 2px solid #7F7950;
+}
+section {
+  margin-top: 122px;
+}
+header > ul:nth-child(2) > li,
+header > ul:nth-child(3) > li,
+header > ul:nth-child(7) > li,
+header > ul:nth-child(8) > li,
+header > ul:nth-child(9) > li,
+header > ul:nth-child(10) > li {
+  line-height: 60px;
+}
+header > ul:nth-child(2) > li:first-child,
+header > ul:nth-child(3) > li:first-child,
+header > ul:nth-child(7) > li:first-child,
+header > ul:nth-child(8) > li:first-child,
+header > ul:nth-child(9) > li:first-child,
+header > ul:nth-child(10) > li:first-child {
+  border-bottom: 1px solid #7F7950;
+}
+section > ul:nth-child(2),
+section > ul:nth-child(3),
+section > ul:nth-child(6),
+section > ul:nth-child(7),
+section > ul:nth-child(8),
+section > ul:nth-child(9),
+section > ul:nth-child(10) {
+  color: #CACAC0;
+}
+section > ul .red_ball {
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
