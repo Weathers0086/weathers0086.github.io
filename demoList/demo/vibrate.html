@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <title>手机震动</title>
+  <style>
+    h2{
+      text-align: center;
+      border: 1px solid #e4393c;
+      margin: 15% 15%;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<h2 id="shock1">手机震动一次</h2>
+<h2 id="shock2">手机震动多次</h2>
+<h2 id="stop">停止震动</h2>
+
+<script>
+  //Vibration接口用于在浏览器中发出命令，使得设备振动。
+  function vibration(){
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate
+    || navigator.mozVibrate
+    || navigator.msVibrate;
+
+    if (navigator.vibrate) {
+      var shock1=document.getElementById("shock1");
+      shock1.onclick=function(){
+        navigator.vibrate(50);
+      };
+
+      var shock2=document.getElementById("shock2");
+      shock2.onclick=function(){
+        alert("支持设备震动，先震动5秒，停3秒，再震动1秒");
+        navigator.vibrate([5000, 100,1000000]); // 奇位数是震动毫秒数，偶位数是震动停止毫秒数
+      };
+
+      var stop=document.getElementById("stop");
+      stop.onclick=function(){
+        navigator.vibrate(0);  // 传入0或空数组
+      };
+    }
+  }
+  vibration();
+</script>
+
+</body>
+</html>

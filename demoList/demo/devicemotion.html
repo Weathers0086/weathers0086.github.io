@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <title>摇一摇</title>
+  <style>
+    h2{
+      text-align: center;
+      border: 1px solid #e4393c;
+      margin: 15% 15%;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<h2 id="shock">摇一摇</h2>
+<h2 id="num">0</h2>
+
+<script>
+  if(window.DeviceMotionEvent) {
+    var speed = 25;
+    var x = y = z = lastX = lastY = lastZ = 0;
+    var num=0;
+    var numHtml=document.getElementById("num");
+
+    window.addEventListener('devicemotion', function(){
+      var acceleration =event.accelerationIncludingGravity;
+      x = acceleration.x;
+      y = acceleration.y;
+      if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed) {
+        navigator.vibrate(150);    //摇一摇动作
+        numHtml.innerHTML=++num;
+      }
+      lastX = x;
+      lastY = y;
+    }, false);
+  }
+</script>
+
+</body>
+</html>
