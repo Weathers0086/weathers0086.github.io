@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <title>隐藏overflow:auto产生的滚动条</title>
+  <style>
+    .scroll{
+      width: 100%;
+      white-space: nowrap;
+      color: red;
+      overflow:auto;
+      height: 100px;
+      line-height: 100px;
+    }
+    .main{
+      line-height: 5
+    }
+
+    ::-webkit-scrollbar{  /*滚动条整体*/
+      width: 0;
+      height: 0;
+    }
+    ::-webkit-scrollbar-track{  /*滚动条的滑轨*/
+      background-color: transparent;
+      opacity: 0;
+    }
+    ::-webkit-scrollbar-thumb{  /*滚动条的滑块*/
+      background-color: transparent;
+      opacity: 0;
+    }
+    ::-webkit-scrollbar-button{  /*滚动条轨道两头的按钮*/
+      background-color: transparent;
+      opacity: 0;
+    }
+    ::-webkit-scrollbar-track-piece{  /*内层轨道*/
+      background-color: transparent;
+      opacity: 0;
+    }
+    ::-webkit-scrollbar-corner{  /*横向滚动条和纵向滚动条相交处的尖角*/
+      background-color: transparent;
+      opacity: 0;
+    }
+    ::-webkit-resizer{  /*两个滚动条的交汇处用于调整元素大小的控件*/
+      background-color: transparent;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="scroll">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eveniet incidunt nisi placeat praesentium quibusdam quod reiciendis suscipit tenetur unde. Deleniti dolores inventore molestias nisi quibusdam, quo tenetur totam unde.
+</div>
+<div class="main">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eum ex incidunt maxime molestias necessitatibus odio odit possimus quae repudiandae. Amet asperiores consectetur dolorem fugiat illum neque obcaecati sapiente voluptatem.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda, commodi dolorem, doloribus dolorum eaque eum expedita explicabo id, in inventore ipsum iure laboriosam laborum nihil possimus quibusdam repudiandae voluptatum?
+</div>
+</body>
+</html>
