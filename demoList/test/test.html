@@ -2,10 +2,22 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title></title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <title>测试</title>
+  <style type="text/css">
+  	#main{
+  		display: flex;
+  		flex-wrap: wrap;
+  		text-align: center;
+  	}
+  	span{
+  		width: 10%;
+  	}
+  </style>
 </head>
 <body>
-
+<div id="main"></div>
 <script src="./jquery-1.11.3.js"></script>
 <script>
   var arr1 = [
@@ -44,32 +56,25 @@
           console.log(j);
           j = 0;
 
-          getData(arr1,31000);
+          getData(arr1,33000);
         },rand);
         return false;
       }
       $.ajax({
         url: arr[index],
-        success: function(res){
-          console.log(res,arr.length);
-          index++;
-          if(index >= arr.length){
-            index = 0;
-          }
-        },
-        error: function(err){
-        	console.log(err);
+        complete: function(res){
+        	console.log(res);
         	index++;
           if(index >= arr.length){
             index = 0;
           }
+          $('#main').append('<span>'+index+'</span>');
         }
       });
     },timer)
   }
   getData(arr1,32000);
   getData(arr2,35000);
-
 </script>
 </body>
 </html>
