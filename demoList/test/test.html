@@ -36,10 +36,9 @@
     timer1 = setInterval(function(){
       j++;
       if(j >= 20){
-        var rand = parseInt(Math.random()*30000+20000);
+        var rand = parseInt(Math.random()*60000+20000);
         console.log(rand);
         clearInterval(timer1);
-
 
         setTimeout(function(){
           console.log(j);
@@ -57,11 +56,18 @@
           if(index >= arr.length){
             index = 0;
           }
+        },
+        error: function(err){
+        	console.log(err);
+        	index++;
+          if(index >= arr.length){
+            index = 0;
+          }
         }
       });
     },timer)
   }
-  getData(arr1,35000);
+  getData(arr1,32000);
   getData(arr2,35000);
 
 </script>
