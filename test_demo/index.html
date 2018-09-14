@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title></title>
+  <link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/FrozenUI/1.3.0/css/frozen.css"/>
+  <style>
+    /*
+    .return-con{
+      -webkit-text-size-adjust: none;
+      display: flex;
+      line-height: 45px;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      border-bottom: .01333rem solid #D0D0D0;
+      background: #F6F6F6;
+      z-index: 9999999999999999;
+    }
+
+    .return-btn{
+      line-height: 45px;
+      padding-left: 0.3rem;
+      color: #4A4A4A;
+      display: flex;
+      font-size: 16px;
+      padding-right: 13px;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .return-btn::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: .2rem;
+      bottom: 0;
+      margin: auto;
+      width: 9px;
+      height: 16px;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAgCAYAAAAffCjxAAAAAXNSR0IArs4c6QAAAPhJREFUSA2t1rsNwjAQBmA/KBiCITwALS01bZSCHaCGEZAoouxAS80mDEETB1/kWInix52da6JI9qezlf8UzjKrbdtt13Vn2K6UevAcxyKvvu8Pdv9JUCEPwjjn3w0F8iFCiGtd1x/00SLIHZpBQSkEBWGQJIRFohAFCUJUxAvlIAsoF5lBJYiDSpEBWgMBSMAomKSY2ewMnz0swBY5/SFYSCmfZgy8xwVa61vTNJfxHfscQrvGPbn0l2IOgiOUYDOoBFtAuZgXysGCEBWLQhQsCWExFITB0FAKI0EhzGR1T05/VVU/E/TjNOhmDO3IHUFXUDZO7rfmD3+wPIAZO6B8AAAAAElFTkSuQmCC') 50% no-repeat;
+      background-size: .048rem auto;
+    }
+
+    .ts-btn{
+      line-height: 45px;
+      display: flex;
+      position: fixed;
+      right: 25px;
+    }
+    .ts-btn a{
+      color: #4A4A4A;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    */
+    .ui-form{
+      margin-bottom: -30px;
+    }
+  </style>
+</head>
+<body>
+
+<section class="ui-container" style="padding-bottom:55px;">
+  <div style="position: relative;">
+    <img src="http://cdn.orarel.cn/zb02/097/cover.gif" width="100%">
+    <div
+      style="z-index:9999999;text-align:left;max-width:70%;line-height:30px;height:30px;padding:0px 10px;overflow:hidden;position:absolute;bottom:20px;background:rgba(0,0,0,0.4);border-radius:0px 15px 15px 0px;color:#FFF;font-size:16px;">
+      已有<span style="color:#FFFF00">373824</span>人参与
+    </div>
+  </div>
+
+  <div class="ui-form ui-border-t">
+    <form action="" onsubmit="return checkSub();">
+      <div class="ui-form-item ui-border-b">
+        <label>姓名</label>
+        <input type="text" name="name" id="name" placeholder="请输入名字">
+      </div>
+
+      <input type="hidden" name="mid" value="dfbdbef8ThaGU9Bg">
+
+      <input type="hidden" name="t" value="1536941948">
+      <input type="hidden" name="retry" value="">
+
+      <div class="ui-btn-wrap">
+        <button class="ui-btn-lg ui-btn-primary">提　交</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  function checkSub(){
+    if(document.getElementById("name")){
+      if(document.getElementById("name").value === ''){
+        alert("请输入你的名字");
+        return false;
+      }
+    }
+    location.href='./share.html';
+    // return true;
+    return false;
+  }
+  document.addEventListener('WeixinJSBridgeReady', function onBridgeReady(){
+    WeixinJSBridge.call('hideOptionMenu');
+  });
+</script>
+</body>
+</html>
