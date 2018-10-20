@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <title>刮刮卡</title>
+  <style>
+    #canvas{
+      display: block;
+      margin: 0 auto;
+      /*background-image: url("./static/images/2.jpg");*/
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      max-width: 750px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas" width="750" height="450"></canvas>
+
+<script src="./static/js/scratch.js"></script>
+<script type="text/javascript">
+  new Scratch({
+    el: '#canvas',
+    ratio: 0.6,
+    coverImg: './static/images/1.jpg',
+    minRadius: 50,
+    bgImg: './static/images/2.jpg',
+    callback: function(){
+      this.clearCanvas()
+    }
+  });
+</script>
+</body>
+</html>
