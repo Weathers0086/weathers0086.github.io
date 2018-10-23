@@ -3,38 +3,57 @@
   *
   * new Scratch({
   *   el: '#bridge',
-  *   ratio: 0.6,
+  *   el2: '#canvas2',    //若有canvas2，则添加逐渐隐藏涂层效果
+  *   ratio: 0.6,         //触发回调函数时刮开面积占总面积的比例，超过这个比例回调就触发，取值为0-1
+  *   // coverColor: '#DDD',
   *   coverImg: './static/images/1.jpg',
-  *   minRadius: '50',          //最小直径
-  *   ratio: '0.3',   //触发回调函数时刮开面积占总面积的比例，超过这个比例回调就触发，取值为0-1
+  *   minRadius: 50,          //最小直径
+  *   bgImg: './static/images/2.jpg',
   *   callback: function(){this.clearCanvas()},    //回调函数，清除canvas内容
   * });
   *
+  * <canvas id="canvas" width="750" height="700"></canvas>
+  * <div id="canvas2"></div>    若有canvas2，则添加逐渐隐藏涂层效果
   * */
 ;
 (function(window, document, undefined){
   function Scratch(settings){
     this.el = document.querySelector(settings.el);   //canvas的选择器
+    this.el2 = document.querySelector(settings.el2);
     this.canvas = this.el.getContext('2d');          //canvas画布
     this.radius = (this.el.width / 100) * 5;
     this.minRadius = this.radius < settings.minRadius ? settings.minRadius : this.radius;
-    this.coverImg = new Image();
+
     this.ratio = settings.ratio || .8;
     this.callback = settings.callback;
-    this.coverImg.src = settings.coverImg;
-    this.canvasBgImg = settings.bgImg || null;
+    this.coverColor = settings.coverColor || '#DDD';
+    this.bgImg = settings.bgImg || null;
     this.eventHandler1 = null;
     this.eventHandler2 = null;
     var that = this;
 
-    this.coverImg.onload = function(){
-      if(that.canvasBgImg){
-        that.el.style.backgroundImage = 'url("'+that.canvasBgImg+'")';
+    that.canvas.fillStyle = this.coverColor;
+    that.canvas.fillRect(0, 0, that.el.width, that.el.height);
+    if(settings.coverImg){    //有cover图像时
+      this.coverImg = new Image();
+      this.coverImg.src = settings.coverImg;
+      this.coverImg.onload = function(){
+        addBgImg(that);
+        that.canvas.drawImage(that.coverImg, 0, 0, that.el.width, that.el.height);
       }
-      that.canvas.drawImage(that.coverImg, 0, 0, that.el.width, that.el.height);
-    };
+    }else{    //无cover图像时
+      addBgImg(that)
+    }
     this.addEvent();
 
+  }
+
+  function addBgImg(that){    //为el或el2添加背景图
+    if(that.el2){
+      that.el2.style.backgroundImage = 'url("'+that.bgImg+'")';
+    }else if(that.bgImg){
+      that.el.style.backgroundImage = 'url("'+that.bgImg+'")';
+    }
   }
 
   Scratch.prototype.detectLeftButton = function(event){
@@ -57,7 +76,7 @@
 
   Scratch.prototype.drawDot = function(mouseX, mouseY){
     this.canvas.beginPath();
-    this.canvas.arc(mouseX, mouseY, this.radius, 0, 2 * Math.PI, true);
+    this.canvas.arc(mouseX, mouseY, this.minRadius, 0, 2 * Math.PI, true);
     this.canvas.fillStyle = '#000';
     this.canvas.globalCompositeOperation = "destination-out";
     this.canvas.fill();
@@ -116,7 +135,11 @@
   }
 
   Scratch.prototype.clearCanvas = function(){    //清除canvas
-    this.canvas.clearRect(0, 0, this.el.width, this.el.height);
+    if(this.el2){
+      this.el.style.opacity = 0;
+    }else{
+      this.canvas.clearRect(0, 0, this.el.width, this.el.height);
+    }
     this.el.removeEventListener(this.events[1], this.eventHandler1);
     this.el.removeEventListener(this.events[2], this.eventHandler2);
   };

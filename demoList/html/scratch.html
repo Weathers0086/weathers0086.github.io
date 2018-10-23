@@ -6,30 +6,48 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
   <title>刮刮卡</title>
   <style>
-    #canvas{
+    .container{
       display: block;
       margin: 0 auto;
-      /*background-image: url("./static/images/2.jpg");*/
+      width: 100%;
+      max-width: 750px;
+      position: relative;
+    }
+    #canvas, #canvas2{
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
       width: 100%;
-      max-width: 750px;
-      height: auto;
+      position: relative;
+      z-index: 2;
+      transition: all 1s linear;
+    }
+    #canvas2{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
 
-<canvas id="canvas" width="750" height="450"></canvas>
+<div class="container">
+  <canvas id="canvas" width="750" height="700"></canvas>
+  <div id="canvas2"></div>
+</div>
 
 <script src="./static/js/scratch.js"></script>
 <script type="text/javascript">
   new Scratch({
     el: '#canvas',
+    el2: '#canvas2',
     ratio: 0.6,
+    // coverColor: '#DDD',
     coverImg: './static/images/1.jpg',
-    minRadius: 50,
+    minRadius: 80,
     bgImg: './static/images/2.jpg',
     callback: function(){
       this.clearCanvas()
