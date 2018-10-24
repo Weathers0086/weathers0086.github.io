@@ -26,7 +26,7 @@
 
     this.ratio = settings.ratio || .8;
     this.callback = settings.callback;
-    this.coverColor = settings.coverColor || '#DDD';
+    this.coverColor = settings.coverColor || 'transparent';
     this.bgImg = settings.bgImg || null;
     this.eventHandler1 = null;
     this.eventHandler2 = null;
