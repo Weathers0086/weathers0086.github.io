@@ -50,7 +50,7 @@
 
   function addBgImg(that){    //为el或el2添加背景图
     if(that.el2){
-      that.el2.style.backgroundImage = 'url("'+that.bgImg+'")';
+      that.el2.src = that.bgImg;
     }else if(that.bgImg){
       that.el.style.backgroundImage = 'url("'+that.bgImg+'")';
     }

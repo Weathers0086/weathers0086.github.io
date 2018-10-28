@@ -10,33 +10,23 @@
       display: block;
       margin: 0 auto;
       width: 100%;
-      max-width: 750px;
       position: relative;
     }
-    #canvas, #canvas2{
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      width: 100%;
-      position: relative;
+    #canvas{
+      position: absolute;
       z-index: 2;
       transition: all 1s linear;
     }
     #canvas2{
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <canvas id="canvas" width="750" height="700"></canvas>
-  <div id="canvas2"></div>
+  <canvas id="canvas" style="top: 47%;left: 2%;width: 95%;height: 36%"></canvas>
+  <img id="canvas2" />
 </div>
 
 <script src="./static/js/scratch.js"></script>
@@ -44,10 +34,10 @@
   new Scratch({
     el: '#canvas',
     el2: '#canvas2',
-    ratio: 0.6,
+    ratio: 0.5,
     // coverColor: '#DDD',
     coverImg: './static/images/1.jpg',
-    minRadius: 80,
+    minRadius: 30,
     bgImg: './static/images/2.jpg',
     callback: function(){
       this.clearCanvas()
