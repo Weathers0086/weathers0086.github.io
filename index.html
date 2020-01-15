@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>fastwe</title>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>nginx与jsonp</title>
 </head>
 <body>
-<script type="text/javascript">
-	window.location.href="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.swf";
+<iframe src="#"></iframe>
+<script src="jquery-1.11.3.js"></script>
+<script>
+setInterval(()=>{
+	var ifr=document.getElementsByTagName("iframe")[0];        //获取iframe元素
+		ifr.width="800px";
+	ifr.height="800px";                                                            //为iframe的属性赋值
+	ifr.src='https://b.pingan.com.cn/creditcard/life/marketing/CardKing/CardKing.html?innerid=PACD-LFX-PDNTF&outerid=ou0001785&cid=ci0000049&campaignid=201907006406&activity_Id=V3219&activity_FlowId=m_Q0MAdaiixQcApYkF1672&enUmForShare=&rec_no=&SSLSOURCE=BROP-CMP';
+},3000)
 </script>
 </body>
 </html>
