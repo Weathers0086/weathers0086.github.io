@@ -1,48 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+<head lang="en">
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-  <title>刮刮卡</title>
-  <style>
-    .container{
-      display: block;
-      margin: 0 auto;
-      width: 100%;
-      position: relative;
-    }
-    #canvas{
-      position: absolute;
-      z-index: 2;
-      transition: all 1s linear;
-    }
-    #canvas2{
-      width: 100%;
-    }
-  </style>
+  <title>nginx与jsonp</title>
 </head>
 <body>
-
-<div class="container">
-  <canvas id="canvas" width="95%" height="36%" style="top: 47%;left: 2%;"></canvas>
-  <img id="canvas2" />
-</div>
-
-<script src="./static/js/scratch.js"></script>
-<script type="text/javascript">
-  new Scratch({
-    el: '#canvas',
-    el2: '#canvas2',
-    ratio: 0.5,
-    // coverColor: '#DDD',
-    coverImg: './static/images/1.jpg',
-    minRadius: 30,
-    bgImg: './static/images/2.jpg',
-    callback: function(){
-      this.clearCanvas()
-    }
-  });
+<iframe src="#"></iframe>
+<script src="jquery-1.11.3.js"></script>
+<script>
+setInterval(()=>{
+	var ifr=document.getElementsByTagName("iframe")[0];        //获取iframe元素
+		ifr.width="800px";
+	ifr.height="800px";                                                            //为iframe的属性赋值
+	ifr.src='https://b.pingan.com.cn/creditcard/life/marketing/CardKing/CardKing.html?innerid=PACD-LFX-PDNTF&outerid=ou0001785&cid=ci0000049&campaignid=201907006406&activity_Id=V3219&activity_FlowId=m_Q0MAdaiixQcApYkF1672&enUmForShare=&rec_no=&SSLSOURCE=BROP-CMP';
+},3000)
 </script>
 </body>
 </html>
